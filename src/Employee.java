@@ -19,4 +19,19 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
+    @Override
+    public String getPosition() {
+        return position;
+    }
+    public void setPosition(String position) {
+        this.position = position;
+    }
+    @Override
+    public double getPaymentAmount() {
+        return salary;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + " зарабатывает " + salary + " тенге";
+    }
 }
