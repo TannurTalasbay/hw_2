@@ -1,4 +1,5 @@
-public class Person {
+public abstract class Person {
+    public abstract double getPaymentAmount();
 }
 
 public class Person implements Payable, Comparable<Person> {
@@ -15,5 +16,40 @@ public class Person implements Payable, Comparable<Person> {
         this();
         this.name = name;
         this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getPosition() {
+        return "Студент";
+    }
+
+    @Override
+    public String toString() {
+        return getPosition() + ": " + id + ". " + name + " " + surname;
+    }
+
+    @Override
+    public double getPaymentAmount() {
+        return 0;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        return Double.compare(other.getPaymentAmount(), getPaymentAmount());
     }
 }
